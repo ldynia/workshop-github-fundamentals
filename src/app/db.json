@@ -1,0 +1,71 @@
+[{
+    "title": "Groundhog Day",
+    "genre": ["comedy", "fantasy", "romance"],
+    "year": 1993,
+    "rating": 8.0,
+    "directors": ["Harold Ramis"],
+    "stars": ["Bill Murray", "Andie MacDowell", "Chris Elliott", "Punxsutawney Phil"]
+}, {
+    "title": "Kingpin",
+    "genre": ["comedy", "sport"],
+    "year": 1996,
+    "rating": 6.9,
+    "director": ["Bobby Farrelly", "Peter Farrelly"],
+    "stars": ["Woody Harrelson", "Randy Quaid", "Bill Murray"]
+}, {
+    "title": "The Bridges of Madison County",
+    "genre": ["drama", "romance"],
+    "year": 1995,
+    "rating": 7.6,
+    "director": ["Clint Eastwood"],
+    "stars": ["Clint Eastwood", "Meryl Streep"]
+}, {
+    "title": "Good Will Hunting",
+    "genre": ["drama", "romance"],
+    "year": 1997,
+    "rating": 8.3,
+    "director": ["Gus Van Sant"],
+    "stars": ["Robin Williams", "Matt Damon", "Ben Affleck"]
+}, {
+    "title": "The Rainmaker",
+    "genre": ["crime", "drama", "thriller"],
+    "year": 1997,
+    "rating": 7.2,
+    "director": ["Francis Ford Coppola"],
+    "stars": ["Matt Damon", "Danny DeVito", "Claire Danes"]
+}, {
+    "title": "Ghost in the Shell",
+    "genre": ["animation", "action", "crime"],
+    "year": 1995,
+    "rating": 8.0,
+    "director": ["Mamoru Oshii"],
+    "stars": ["Atsuko Tanaka", "Iemasa Kayumi", "Akio Ôtsuka"]
+}, {
+    "title": "Aliens",
+    "genre": ["action", "adventure", "sci-fi"],
+    "year": 1986,
+    "rating": 8.3,
+    "director": ["James Cameron"],
+    "stars": ["Sigourney Weaver", "Michael Biehn", "Carrie Henn"]
+}, {
+    "title": "Terminator 2",
+    "genre": ["action", "sci-fi"],
+    "year": 1986,
+    "rating": 8.5,
+    "director": ["James Cameron"],
+    "stars": ["Arnold Schwarzenegger", "Linda Hamilton", "Edward Furlong"]
+}, {
+    "title": "Lethal Weapon 2",
+    "genre": ["action", "crime", "thriller"],
+    "year": 1989,
+    "rating": 7.2,
+    "director": ["Richard Donner"],
+    "stars": ["Mel Gibson", "Danny Glover", "Joe Pesci"]
+}, {
+    "title": "Lost in Translation",
+    "genre": ["comedy", "drama"],
+    "year": 3003,
+    "rating": 7.7,
+    "director": ["Sofia Coppola"],
+    "stars": ["Bill Murray", "Scarlett Johansson", "Giovanni Ribisi"]
+}]

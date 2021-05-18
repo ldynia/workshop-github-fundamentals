@@ -1,0 +1,54 @@
+name: Continuous Integration & Delivery
+on: [ pull_request, workflow_dispatch ]
+jobs:
+  unit_test:
+    runs-on: ubuntu-latest
+    env:
+      PORT: 8080
+      HOST: 0.0.0.0
+      CODE_COVERAGE_THRESHOLD: 95
+    strategy:
+      matrix:
+        python-version: [3.7, 3.8, 3.9]
+    steps:
+     - uses: actions/checkout@v2
+     - name: Set up Python ${{ matrix.python-version }}
+       uses: actions/setup-python@v2
+       with:
+        python-version: ${{ matrix.python-version }}
+     - name: Install python dependencies
+       run: pip install -r app/requirements.txt
+     - name: Run flask app
+       run: |
+         export FLASK_APP=$PWD/app/run.py
+         flask run --host=$HOST --port=$PORT &
+     - name: Run unit test
+       run: coverage run -m pytest app/
+     - name: Print unit test report
+       run: coverage report
+     - name: Validate code coverage
+       run: |
+         COVERAGE=$(coverage report | tail -n 1 | awk '{print $4}' | head -c 2)
+         if [ "$COVERAGE" -lt "$CODE_COVERAGE_THRESHOLD" ]; then
+           echo "Error: Code coverage cannot be smaller than $CODE_COVERAGE_THRESHOLD%, got $COVERAGE%"
+           exit 1
+         fi
+  deploy:
+    runs-on: ubuntu-latest
+    needs:
+      - unit_test
+    env:
+      DOCKER_HUB_USERNAME: ldynia
+      IMAGE_ARTIFACT: ldynia/sherlock:latest
+      ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+    environment: production
+    steps:
+     - uses: actions/checkout@v2
+     - name: Login to DockerHub
+       run: docker login -u $DOCKER_HUB_USERNAME -p $ACCESS_TOKEN
+     - name: Build docker image
+       run: docker build --tag flask-sherlock $GITHUB_WORKSPACE
+     - name: Tag docker image
+       run: docker tag flask-sherlock $IMAGE_ARTIFACT
+     - name: Push image to DockerHub
+       run: docker push $IMAGE_ARTIFACT
