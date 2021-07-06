@@ -2,7 +2,7 @@
 
 #### Objectives
 
-By the end of this workshop, you’ll know how to:
+To create an **open source movie recommendation engine** implemented in a microservice architecture. By the end of this workshop, you’ll know how to:
 
 - [X] History of OpenSource - PPT presentation
 - [X] How to create an Open Source project
@@ -67,11 +67,11 @@ Additional information about **legal aspects of having no license** can be found
 
   #### What is a GitHub repository?
 
-  A GitHub repository is a place where your **project** and its **files** are stored. Repository stores source code along with `.git` folder - a directory which tracks snapshot of changes introduced to your files.
+  A repository is a place where your git **project** and its **files** resides. Typical repository stores source code along with `.git` folder - a directory which tracks snapshot of changes introduced to your files.
 
   #### Why to use GitHub repository?
 
-  Beside tracking changes to your files, GitHub repository is:
+  GitHub repository is:
   - A place for documenting your project - **GitHub Wiki**
   - A place for automatizing tasks within software development life cycle - **GitHub Actions**
   - A place for organizing and tracking work items - **GitHub Projects**
