@@ -7,17 +7,16 @@ To create an **open source movie recommendation engine** implemented in a micros
 - [X] History of OpenSource - PPT presentation
 - [X] How to create an Open Source project
 - [X] [Markdown markup language](https://guides.github.com/features/mastering-markdown/)
-- [X] [Github Repository](https://github.com/ldynia/workshop-github-fundamentals#1-github-repository---github-templates)
-- [X] [Microservice](https://github.com/ldynia/workshop-github-fundamentals#2-microservice)
-- [X] [Docker](https://github.com/ldynia/workshop-github-fundamentals#1-github-repository---github-templates)
-- [X] [Github Templates](https://github.com/ldynia/workshop-github-fundamentals#1-github-repository---github-templates)
-- [X] [Github Issues](https://github.com/ldynia/workshop-github-fundamentals#3-github-issues)
-- [X] [Github Releases / Tag](https://github.com/ldynia/workshop-github-fundamentals#4-github-releases--tags)
-- [X] [Github Wikis](https://github.com/ldynia/workshop-github-fundamentals#5-github-wikis)
-- [X] [Github Pages](https://github.com/ldynia/workshop-github-fundamentals#6-github-pages)
-- [X] [Github Actions](https://github.com/ldynia/workshop-github-fundamentals#7-github-actions)
-- [X] [Pull Requests](https://github.com/ldynia/workshop-github-fundamentals#8-github-pull-request)
-- [X] [Github Advanced Search](https://github.com/ldynia/workshop-github-fundamentals#9-github-advanced-search)
+- [X] [Docker](#1-github-repository---github-templates)
+- [X] [Github Repository / Templates](#1-github-repository---github-templates)
+- [X] [Microservice](#2-microservice)
+- [X] [Github Issues](#3-github-issues)
+- [X] [Github Releases / Tag](#4-github-releases--tags)
+- [X] [Github Actions](#5-github-actions)
+- [X] [Pull Requests](#6-github-pull-request)
+- [X] [Github Advanced Search](#7-github-advanced-search)
+- [X] [Github Pages](#8-github-pages)
+- [X] [Github Wikis](#9-github-wikis)
 
 And you’ll be able to:
 
@@ -102,24 +101,10 @@ Let's create our first GitHub repository. This repository will hold `Hello world
     **/app/requirements.txt**
 
     ```
-    coverage
-    Flask
-    pytest
+    coverage==5.5
+    Flask==2.0.1
+    pytest==6.2.4
     ```
-
-    **app/run.py**
-
-    ```python
-    from flask import Flask
-
-    app = Flask(__name__)
-
-
-    @app.route("/")
-    def hello_world():
-        return "Hello, Flask!"
-    ```
-
     **app/test_app.py**
 
     ```python
@@ -139,6 +124,19 @@ Let's create our first GitHub repository. This repository will hold `Hello world
         response = client.get("/")
         assert response.status_code == 200
         assert b"Flask" in response.data
+    ```
+
+    **app/run.py**
+
+    ```python
+    from flask import Flask
+
+    app = Flask(__name__)
+
+
+    @app.route("/")
+    def hello_world():
+        return "Hello, Flask!"
     ```
 
     **Dockerfile**
@@ -178,6 +176,8 @@ Let's create our first GitHub repository. This repository will hold `Hello world
     [O'Reilly's sandbox](https://learning.oreilly.com/scenarios/ubuntu-sandbox/9781492062837) (alternatively you could use [Katacoda's playground](https://www.katacoda.com/courses/ubuntu/playground2004)). Once the sandbox/playground is ready, execute instructions specified in below sections.
 
     ## Setup SSH key
+
+    **This step is option and can be omitted.**
 
     Create ssh key and add it to GitHub's [SSH keys](https://github.com/settings/keys) settings.
 
@@ -480,6 +480,8 @@ Let's create our first GitHub repository. This repository will hold `Hello world
 
     ## Setup SSH key
 
+    **This step is option and can be omitted.**
+
     Create ssh key and add it to GitHub's [SSH keys](https://github.com/settings/keys) settings.
 
     ```bash
@@ -519,16 +521,6 @@ Let's create our first GitHub repository. This repository will hold `Hello world
     ```bash
     docker exec sherlock coverage run -m pytest
     docker exec sherlock coverage report
-    ```
-
-    ## Debug
-
-    ```bash
-    {
-        docker stop sherlock;
-        docker build --no-cache --tag flask-sherlock $PWD;
-        docker run --rm --detach --name sherlock --publish 80:8080 --volume $PWD/app:/app flask-sherlock;
-    }
     ```
     ~~~
 
@@ -573,7 +565,227 @@ Let's create our first GitHub repository. This repository will hold `Hello world
 
     ![New Release](assets/img/git/release.png)
 
-## 5. GitHub Wikis
+## 5. GitHub Actions
+
+<details>
+  <summary>Context</summary>
+
+  #### What is GitHub Actions?
+
+  GitHub Actions is a tool that allows you to automate tasks within your software development life cycle. GitHub Actions are event-driven, which means that commands that you want to execute run after occurrence of a specified event.
+
+  #### Why to use GitHub Actions?
+
+  GitHub Actions allows you to adopt backbone of DevOps methodology such CI/CD.
+
+  #### Explenation
+
+  - **Continuous Integration** goal is to enable automated way to build, package, and test applications.
+  - **Continuous Delivery** goal is to automate the delivery of applications to given environment (test or production) via manual release.
+  - **Continuous Deployment** goal is to automated release of code to a production environment.
+
+  #### Books
+
+  [The Toyota Way: 14 Management Principles](https://www.goodreads.com/book/show/161789.The_Toyota_Way)
+
+</details>
+
+1. In the repository click the [Actions](https://github.com/ldynia/flask-sherlock/actions) tab. Then click [set up a workflow yourself](https://github.com/ldynia/flask-sherlock2/new/main?filename=.github%2Fworkflows%2Fmain.yml&workflow_template=blank) link and create below workflows. **Remember to change username !!!**
+
+    [![Actions](assets/img/git/tabs_actions.png)](https://github.com/ldynia/flask-sherlock/actions)
+    ![Actions Get Started](assets/img/git/actions_get_started.png)
+
+    **.github/workflows/cicd.yml**
+
+    ```yaml
+    name: Continuous Integration
+    on: [ pull_request, workflow_dispatch ]
+    jobs:
+      unit_test:
+        runs-on: ubuntu-latest
+        env:
+          CODE_COVERAGE_THRESHOLD: 90
+        strategy:
+          matrix:
+            python-version: [3.7, 3.8]
+        steps:
+         - uses: actions/checkout@v2
+         - name: Set up Python ${{ matrix.python-version }}
+           uses: actions/setup-python@v2
+           with:
+            python-version: ${{ matrix.python-version }}
+         - name: Install python dependencies
+           run: pip install -r app/requirements.txt
+         - name: Run flask app
+           run: |
+             export FLASK_APP=$PWD/app/run.py
+             flask run &
+         - name: Run unit test
+           run: coverage run -m pytest app/
+         - name: Print unit test report
+           run: coverage report
+         - name: Validate code coverage
+           run: |
+             COVERAGE=$(coverage report | tail -n 1 | awk '{print $4}' | head -c 2)
+             if [ "$COVERAGE" -lt "$CODE_COVERAGE_THRESHOLD" ]; then
+               echo "Error: Code coverage cannot be smaller than $CODE_COVERAGE_THRESHOLD%, got $COVERAGE%"
+               exit 1
+             fi
+      publish:
+        runs-on: ubuntu-latest
+        needs:
+          - unit_test
+        env:
+            IMAGE_ARTIFACT: ${{ secrets.DOCKER_HUB_USERNAME }}/sherlock:latest
+        environment: production
+        steps:
+         - uses: actions/checkout@v2
+         - name: Login to DockerHub
+           run: docker login -u ${{ secrets.DOCKER_HUB_USERNAME }} -p ${{ secrets.DOCKER_HUB_PASSWORD }}
+         - name: Build docker image
+           run: docker build --tag flask-sherlock $GITHUB_WORKSPACE
+         - name: Tag docker image
+           run: docker tag flask-sherlock $IMAGE_ARTIFACT
+         - name: Push image to DockerHub
+           run: docker push $IMAGE_ARTIFACT
+    ```
+
+1. What's missing are `DOCKER_HUB_USERNAME` and `DOCKER_HUB_PASSWORD` environment variables which are our secrets. Go to repository [Settings](https://github.com/ldynia/flask-sherlock/settings), click [Environments](https://github.com/ldynia/flask-sherlock/settings/environments) blade, then click [New Environment](https://github.com/ldynia/flask-sherlock/settings/environments/new) button, name it **production**. Next, click the `Configure environment` button. Finally, click the `Add Secret` button and add [DockerHub](https://hub.docker.com/settings/security) secrets.
+
+    ![Settings](assets/img/git/tabs_settings.png)
+    ![Settings](assets/img/git/environment_secrets.png)
+
+
+1. Now in [Actions](https://github.com/ldynia/flask-sherlock/actions) you will see below workflows. Select `Continuous Integration` blade, then click the `Run Workflow` button, and run workflow against the **main** branch.
+
+    ![Workflows](assets/img/git/actions_workfows_2.png)
+    ![Run Workflow](assets/img/git/actions_run_workflow.png)
+
+1. Check that our image appears in [DockerHub Repositories](https://hub.docker.com/repositories)
+
+## 6. GitHub Pull Request
+
+<details>
+  <summary>Context</summary>
+
+  #### What is a Pull Request?
+
+  A pull request (PR) is a feature of a git hosting service that allows to create a contribution to the repository. PRs allow the maintainer of a repository to review, ask for comments, edit or even discard submitted work. I like to think of a PR as a tangible unit of work in a collaborative world of code.
+
+</details>
+
+1. Fork repository by going to [https://github.com/ldynia/flask-sherlock](https://github.com/ldynia/flask-sherlock) and click `Fork` button. Next, in your fork create a new branch called  **db/update**
+
+    ![Fork](./assets/img/git/fork.png)
+    ![Fork](./assets/img/git/new_branch.png)
+
+1. Update `/app/db.json` with your favorite movie and set commit message to **Adding my favorite movie**. **Remember to stick to JSON encoding !!!**
+
+    ```json
+    {
+        "title": "The Ghost Writer",
+        "genre": ["crime", "drama", "mystery"],
+        "year": 2010,
+        "rating": 7.2,
+        "director": ["Roman Polański"],
+        "stars": ["Ewan McGregor", "Pierce Brosnan", "Olivia Williams"]
+    }
+    ```
+
+1. Go to your repository [https://github.com/kigetj/flask-sherlock](https://github.com/kigetj/flask-sherlock) and click the [Pull Request](https://github.com/kigetj/flask-sherlock/pulls) tab, then click the `Compare & pull request` button. Finally, write a comment and click the `Create pull request` button.
+
+    [![Pull Request](assets/img/git/tabs_pr.png)](https://github.com/kigetj/flask-sherlock/pulls)
+    [![x](./assets/img/git/pr_compare.png)](https://github.com/ldynia/flask-sherlock/compare/main...kigetj:db/update?expand=1)
+    ![PR](assets/img/git/pr.png)
+    ![PR Workflow](assets/img/git/pr_workflow.png)
+
+## 7. GitHub Advanced Search
+
+- [https://github.com/search](https://github.com/search)
+- [GitHub search docs](https://docs.github.com/en/github/searching-for-information-on-github/searching-on-github)
+
+<details>
+  <summary>Copy</summary>
+
+  - `if extension:yaml extension:yml path:.github/workflows language:YAML`
+  - `HEALTHCHECK filename:Dockerfile language:Dockerfile`
+  - `flask in:name,description`
+
+</details>
+
+![Advanced Search GitHub Actions](assets/img/git/as_actions.png)
+![Advanced Search GitHub Actions](assets/img/git/as_docker.png)
+
+
+## 8. GitHub Pages
+
+<details>
+  <summary>Context</summary>
+
+  #### What is GitHub Pages?
+
+  GitHub Pages is a hosting service for static sites. GitHub Pages serves any static files (HTML, CSS, JavaScript) that you push to repository. You can create your own static files or use a static site generator such [Jekyll](https://jekyllrb.com/docs/) to build your site for you.
+
+  #### Why to use GitHub Pages?
+
+  The short answer is for **branding** and **promotion**. You can use it for blogging, or as a journal of your work. You can promote yourself with `my_username.github.io` or your project `my_username.github.io/my_project`. Moreover, you have option to brand your work with a custom domain.
+
+</details>
+
+1. In repository settings [Settings](https://github.com/ldynia/flask-sherlock/settings) locate [Pages](https://github.com/ldynia/flask-sherlock/settings/pages) tab. Set `Source` to the **main** branch and `directory` to **/docs** and click the`Save` button.
+
+    [![GitHub Pages](assets/img/git/tabs_settings.png)](https://github.com/ldynia/flask-sherlock/settings)
+    [![Github Pages](assets/img/git/settings_pages.png)](https://github.com/ldynia/flask-sherlock/settings/pages)
+
+1. Click `Choose a theme` button and select `Cayman` theme (I like it the most) then click `Select theme` button. Finally, copy and paste below content into the interface that you see.
+
+    ~~~
+    ## Sherlock
+
+    [webpage](https://ldynia.github.io/flask-sherlock/)
+
+    Sherlock is the best movie recommendation engine ever created. Isn't it Dr. [Jekyll](https://jekyllrb.com/)? More advanced references please look up how [Jekyll docs](https://github.com/jekyll/jekyll/tree/master/docs) are structured.
+
+    ![sherlock](https://files.wallpaperpass.com/2019/09/sherlock%20wallpaper%2081%20-%201920x1200-1024x640.jpg)
+
+    ## Multiverse
+
+    ```bash
+    $ echo Hello, bash!
+    ```
+
+    ```python
+    >>> print('Hello, python!')
+    ```
+
+    #### Markdown 101
+
+    Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+
+    ```markdown
+    Syntax highlighted code block
+
+    > Quotes "Life is like box o chocolates"
+
+    # Header 1
+    ## Header 2
+    #### Header 3
+
+    - Bulleted
+    - List
+
+    1. Numbered
+    2. List
+
+    **Bold** and _Italic_ and `Code` text
+
+    [Link](url) and ![Image](src)
+    ```
+    ~~~
+
+1. Once ready you will be able to promote you project at this url [https://ldynia.github.io/flask-sherlock/](https://ldynia.github.io/flask-sherlock/) **Remember to change username !!!**
+
+## 9. GitHub Wikis
 
 <details>
   <summary>Context</summary>
@@ -644,208 +856,3 @@ Let's create our first GitHub repository. This repository will hold `Hello world
     ~~~
     Sherlock project is awesome!
     ~~~
-
-## 6. GitHub Pages
-
-<details>
-  <summary>Context</summary>
-
-  #### What is GitHub Pages?
-
-  GitHub Pages is a hosting service for static sites. GitHub Pages serves any static files (HTML, CSS, JavaScript) that you push to repository. You can create your own static files or use a static site generator such [Jekyll](https://jekyllrb.com/docs/) to build your site for you.
-
-  #### Why to use GitHub Pages?
-
-  The short answer is for **branding** and **promotion**. You can use it for blogging, or as a journal of your work. You can promote yourself with `my_username.github.io` or your project `my_username.github.io/my_project`. Moreover, you have option to brand your work with a custom domain.
-
-</details>
-
-1. In repository settings [Settings](https://github.com/ldynia/flask-sherlock/settings) locate [Pages](https://github.com/ldynia/flask-sherlock/settings/pages) tab. Set `Source` to the **main** branch and `directory` to **/docs** and click the`Save` button.
-
-    [![GitHub Pages](assets/img/git/tabs_settings.png)](https://github.com/ldynia/flask-sherlock/settings)
-    [![Github Pages](assets/img/git/settings_pages.png)](https://github.com/ldynia/flask-sherlock/settings/pages)
-
-1. Click `Choose a theme` button and select `Cayman` theme (I like it the most) then click `Select theme` button. Finally, copy and paste below content into the interface that you see.
-
-    ~~~
-    ## Sherlock
-
-    [webpage](https://ldynia.github.io/flask-sherlock/)
-
-    Sherlock is the best movie recommendation engine ever created. Isn't it Dr. [Jekyll](https://jekyllrb.com/)? More advanced references please look up how [Jekyll docs](https://github.com/jekyll/jekyll/tree/master/docs) are structured.
-
-    ![sherlock](https://files.wallpaperpass.com/2019/09/sherlock%20wallpaper%2081%20-%201920x1200-1024x640.jpg)
-
-    ## Multiverse
-
-    ```bash
-    $ echo Hello, bash!
-    ```
-
-    ```python
-    >>> print('Hello, python!')
-    ```
-
-    #### Markdown 101
-
-    Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-    ```markdown
-    Syntax highlighted code block
-
-    > Quotes "Life is like box o chocolates"
-
-    # Header 1
-    ## Header 2
-    #### Header 3
-
-    - Bulleted
-    - List
-
-    1. Numbered
-    2. List
-
-    **Bold** and _Italic_ and `Code` text
-
-    [Link](url) and ![Image](src)
-    ```
-    ~~~
-
-1. Once ready you will be able to promote you project at this url [https://ldynia.github.io/flask-sherlock/](https://ldynia.github.io/flask-sherlock/) **Remember to change username !!!**
-
-## 7. GitHub Actions
-
-<details>
-  <summary>Context</summary>
-
-  #### What is GitHub Actions?
-
-  GitHub Actions is a tool that allows you to automate tasks within your software development life cycle. GitHub Actions are event-driven, which means that commands that you want to execute run after occurrence of a specified event.
-
-  #### Why to use GitHub Actions?
-
-  GitHub Actions allows you to adopt backbone of DevOps methodology such CI/CD.
-
-</details>
-
-1. In the repository click the [Actions](https://github.com/ldynia/flask-sherlock/actions) tab. Then click [set up a workflow yourself](https://github.com/ldynia/flask-sherlock2/new/main?filename=.github%2Fworkflows%2Fmain.yml&workflow_template=blank) link and create below workflows. **Remember to change username !!!**
-
-    [![Actions](assets/img/git/tabs_actions.png)](https://github.com/ldynia/flask-sherlock/actions)
-    ![Actions Get Started](assets/img/git/actions_get_started.png)
-
-    **.github/workflows/cicd.yml**
-
-    ```yaml
-    name: Continuous Integration & Delivery
-    on: [ pull_request_target, workflow_dispatch ]
-    jobs:
-      unit_test:
-        runs-on: ubuntu-latest
-        env:
-          CODE_COVERAGE_THRESHOLD: 90
-        strategy:
-          matrix:
-            python-version: [3.7, 3.8]
-        steps:
-         - uses: actions/checkout@v2
-         - name: Set up Python ${{ matrix.python-version }}
-           uses: actions/setup-python@v2
-           with:
-            python-version: ${{ matrix.python-version }}
-         - name: Install python dependencies
-           run: pip install -r app/requirements.txt
-         - name: Run flask app
-           run: |
-             export FLASK_APP=$PWD/app/run.py
-             flask run &
-         - name: Run unit test
-           run: coverage run -m pytest app/
-         - name: Print unit test report
-           run: coverage report
-         - name: Validate code coverage
-           run: |
-             COVERAGE=$(coverage report | tail -n 1 | awk '{print $4}' | head -c 2)
-             if [ "$COVERAGE" -lt "$CODE_COVERAGE_THRESHOLD" ]; then
-               echo "Error: Code coverage cannot be smaller than $CODE_COVERAGE_THRESHOLD%, got $COVERAGE%"
-               exit 1
-             fi
-      publish:
-        runs-on: ubuntu-latest
-        needs:
-          - unit_test
-        env:
-            IMAGE_ARTIFACT: ${{ secrets.DOCKER_HUB_USERNAME }}/sherlock:latest
-        environment: production
-        steps:
-         - uses: actions/checkout@v2
-         - name: Login to DockerHub
-           run: docker login -u ${{ secrets.DOCKER_HUB_USERNAME }} -p ${{ secrets.DOCKER_HUB_PASSWORD }}
-         - name: Build docker image
-           run: docker build --tag flask-sherlock $GITHUB_WORKSPACE
-         - name: Tag docker image
-           run: docker tag flask-sherlock $IMAGE_ARTIFACT
-         - name: Push image to DockerHub
-           run: docker push $IMAGE_ARTIFACT
-    ```
-
-1. What's missing are `DOCKER_HUB_USERNAME` and `DOCKER_HUB_PASSWORD` environment variables which are our secrets. Go to repository [Settings](https://github.com/ldynia/flask-sherlock/settings), click [Environments](https://github.com/ldynia/flask-sherlock/settings/environments) blade, then click [New Environment](https://github.com/ldynia/flask-sherlock/settings/environments/new) button, name it **production**. Next, click the `Configure environment` button. Finally, click the `Add Secret` button and add [DockerHub](https://hub.docker.com/settings/security) secrets.
-
-    ![Settings](assets/img/git/tabs_settings.png)
-    ![Settings](assets/img/git/environment_secrets.png)
-
-
-1. Now in [Actions](https://github.com/ldynia/flask-sherlock/actions) you will see below workflows. Select `Continuous Integration` blade, then click the `Run Workflow` button, and run workflow against the **main** branch.
-
-    ![Workflows](assets/img/git/actions_workfows_2.png)
-    ![Run Workflow](assets/img/git/actions_run_workflow.png)
-
-1. Check that our image appears in [DockerHub Repositories](https://hub.docker.com/repositories)
-
-## 8. GitHub Pull Request
-
-<details>
-  <summary>Context</summary>
-
-  #### What is a Pull Request?
-
-  A pull request (PR) is a feature of a git hosting service that allows to create a contribution to the repository. PRs allow the maintainer of a repository to review, ask for comments, edit or even discard submitted work. I like to think of a PR as a tangible unit of work in a collaborative world of code.
-
-</details>
-
-1. Fork repository by going to [https://github.com/ldynia/flask-sherlock](https://github.com/ldynia/flask-sherlock) and click `Fork` button. Next, in your fork create a new branch called  **db/update**
-
-    ![Fork](./assets/img/git/fork.png)
-    ![Fork](./assets/img/git/new_branch.png)
-
-1. Update `/app/db.json` with your favorite movie and set commit message to **Adding my favorite movie**. **Remember to stick to JSON encoding !!!**
-
-    ```json
-    {
-        "title": "The Ghost Writer",
-        "genre": ["crime", "drama", "mystery"],
-        "year": 2010,
-        "rating": 7.2,
-        "director": ["Roman Polański"],
-        "stars": ["Ewan McGregor", "Pierce Brosnan", "Olivia Williams"]
-    }
-    ```
-
-1. Go to your repository [https://github.com/kigetj/flask-sherlock](https://github.com/kigetj/flask-sherlock) and click the [Pull Request](https://github.com/kigetj/flask-sherlock/pulls) tab, then click the `Compare & pull request` button. Finally, write a comment and click the `Create pull request` button.
-
-    [![Pull Request](assets/img/git/tabs_pr.png)](https://github.com/kigetj/flask-sherlock/pulls)
-    [![x](./assets/img/git/pr_compare.png)](https://github.com/ldynia/flask-sherlock/compare/main...kigetj:db/update?expand=1)
-    ![PR](assets/img/git/pr.png)
-    ![PR Workflow](assets/img/git/pr_workflow.png)
-
-## 9. GitHub Advanced Search
-
-- [https://github.com/search](https://github.com/search)
-- [GitHub search docs](https://docs.github.com/en/github/searching-for-information-on-github/searching-on-github)
-
-
-![Advanced Search GitHub Actions](assets/img/git/as_actions.png)
-![Advanced Search GitHub Actions](assets/img/git/as_docker.png)
-
-```
-flask in:name,description
-```
