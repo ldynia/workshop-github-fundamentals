@@ -216,6 +216,11 @@ Let's create our first GitHub repository. This repository will hold `Hello world
     docker exec flask-app coverage run -m pytest
     docker exec flask-app coverage report
     ```
+    
+    Stop container
+    ```bash
+    docker stop flask-app
+    ```
     ~~~
 
 1. Let's mark repository to a template by clicking repository `Settings` tab, and selecting `Template repository` checkbox.
@@ -521,6 +526,11 @@ Let's create our first GitHub repository. This repository will hold `Hello world
     ```bash
     docker exec sherlock coverage run -m pytest
     docker exec sherlock coverage report
+    ```
+    
+    Stop container
+    ```bash
+    docker stop sherlock
     ```
     ~~~
 
