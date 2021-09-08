@@ -642,6 +642,7 @@ Let's create our first GitHub repository. This repository will hold `Hello world
                exit 1
              fi
       publish:
+        if: "github.event_name == 'workflow_dispatch'"
         runs-on: ubuntu-latest
         needs:
           - unit_test
