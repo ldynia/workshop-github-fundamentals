@@ -37,7 +37,7 @@ And you’ll be able to:
 
 #### Environment
 
-- [O'Reilly's sandbox](https://learning.oreilly.com/scenarios/ubuntu-sandbox/9781492062837)
+- [O'Reilly's sandbox](https://learning.oreilly.com/scenarios/docker-sandbox/9781492086161)
 - [Kata Coda](https://www.katacoda.com/courses/ubuntu/playground2004)
 
 #### Links
