@@ -605,7 +605,7 @@ Let's create our first GitHub repository. This repository will hold `Hello world
     [![Actions](assets/img/git/tabs_actions.png)](https://github.com/ldynia/flask-sherlock/actions)
     ![Actions Get Started](assets/img/git/actions_get_started.png)
 
-    **.github/workflows/cicd.yml**
+    **.github/workflows/ci.yml**
 
     ```yaml
     name: Continuous Integration
