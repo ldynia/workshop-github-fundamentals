@@ -101,9 +101,9 @@ Let's create our first GitHub repository. This repository will hold `Hello world
     **/app/requirements.txt**
 
     ```
-    coverage==6.4.1
-    Flask==2.1.2
-    pytest==7.1.2
+    coverage==6.5.0
+    Flask==2.2.2
+    pytest==7.2.0
     ```
     **app/test_app.py**
 
