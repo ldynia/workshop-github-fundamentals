@@ -110,21 +110,20 @@ Let's create our first GitHub repository. This repository will hold `Hello world
     ```python
     import pytest
 
-    from run import app as apk
+    from run import app as application
 
 
     @pytest.fixture()
     def app():
-        apk.config.update({
+        application.config.update({
             "TESTING": True,
         })
-        yield apk
+        yield application
 
 
     @pytest.fixture
     def client(app):   
-        with app.test_client() as client:
-            yield client
+        return app.test_client()
 
 
     @pytest.fixture()
