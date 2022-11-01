@@ -770,7 +770,7 @@ Let's create our first GitHub repository. This repository will hold `Hello world
     [![GitHub Pages](assets/img/git/tabs_settings.png)](https://github.com/ldynia/flask-sherlock/settings)
     [![Github Pages](assets/img/git/settings_pages.png)](https://github.com/ldynia/flask-sherlock/settings/pages)
 
-1. Click `Choose a theme` button and select `Cayman` theme (I like it the most) then click `Select theme` button. Finally, copy and paste below content into the interface that you see.
+1. Click `Choose a theme` button and select `Cayman` theme (I like it the most) then click `Select theme` button. Finally, copy and paste below content into the interface that you see, or into `docs/index.md`
 
     ~~~
     ## Sherlock
@@ -815,6 +815,14 @@ Let's create our first GitHub repository. This repository will hold `Hello world
     [Link](url) and ![Image](src)
     ```
     ~~~
+
+1. Configure [themen]([url](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/adding-a-theme-to-your-github-pages-site-using-jekyll)) `docs/_config.yml`
+
+   ```
+   markdown: kramdown
+   theme: minima
+   ```
+   
 
 1. Once ready you will be able to promote you project at this url [https://ldynia.github.io/flask-sherlock/](https://ldynia.github.io/flask-sherlock/) **Remember to change username !!!**
 
