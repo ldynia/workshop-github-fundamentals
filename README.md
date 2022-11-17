@@ -641,9 +641,9 @@ Let's create our first GitHub repository. This repository will hold `Hello world
           matrix:
             python-version: [3.7, 3.8]
         steps:
-         - uses: actions/checkout@v2
+         - uses: actions/checkout@v3
          - name: Set up Python ${{ matrix.python-version }}
-           uses: actions/setup-python@v2
+           uses: actions/setup-python@v4
            with:
             python-version: ${{ matrix.python-version }}
          - name: Install python dependencies
@@ -672,7 +672,7 @@ Let's create our first GitHub repository. This repository will hold `Hello world
             IMAGE_ARTIFACT: ${{ secrets.DOCKER_HUB_USERNAME }}/sherlock:latest
         environment: production
         steps:
-         - uses: actions/checkout@v2
+         - uses: actions/checkout@v3
          - name: Login to DockerHub
            run: docker login -u ${{ secrets.DOCKER_HUB_USERNAME }} -p ${{ secrets.DOCKER_HUB_PASSWORD }}
          - name: Build docker image
