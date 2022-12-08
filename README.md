@@ -190,7 +190,9 @@ Let's create our first GitHub repository. This repository will hold `Hello world
       "name": "Python 3.11",
       "image": "mcr.microsoft.com/devcontainers/python:3.11",
       "hostRequirements": {
-        "cpus": 4
+        "cpus": 4,
+        "memory": "8gb",
+        "storage": "32gb" 
       },
       "features": {
         "ghcr.io/devcontainers-contrib/features/black:1": {},
