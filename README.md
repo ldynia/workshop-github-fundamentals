@@ -155,23 +155,34 @@ Let's create our first GitHub repository. This repository will hold `Hello world
     ```Dockerfile
     FROM python:3.9.5-alpine
 
+    ARG FLASK_DEBUG=False \
+        GROUP=nogroup \
+        USER=nobody \
+        WORKDIR=/usr/src
+
     # Setup environment variables
-    ENV PORT=8080 \
+    ENV FLASK_APP=$WORKDIR/run.py \
+        FLASK_DEBUG=$FLASK_DEBUG \
         HOST=0.0.0.0 \
-        FLASK_APP=/app/run.py \
+        PORT=8080 \
         PYTHONUNBUFFERED=True
-    ARG FLASK_DEBUG=False
-    ENV FLASK_DEBUG=$FLASK_DEBUG
 
     # Setup file system
-    WORKDIR /app
-    COPY app/ /app
+    WORKDIR $WORKDIR
+    RUN chown $USER:$GROUP $WORKDIR
+    COPY --chown=$USER:$GROUP app/ $WORKDIR
+
+    # Install OS packages
+    RUN apk add vim
 
     # Upgrade pip & install python packages
-    RUN pip install --upgrade pip --requirement /app/requirements.txt
+    RUN pip install --upgrade pip --requirement requirements.txt
 
     # Indicate which port to expose
     EXPOSE $PORT
+
+    # Rootless run
+    USER $USER:$GROUP
 
     # Start app server
     CMD flask run --host=$HOST --port=$PORT
@@ -184,12 +195,6 @@ Let's create our first GitHub repository. This repository will hold `Hello world
       "image": "mcr.microsoft.com/devcontainers/python:3.11",
       "hostRequirements": {
         "cpus": 4
-      },
-      "portsAttributes": {
-        "8080": {
-          "label": "Application",
-          "onAutoForward": "openPreview"
-        }
       },
       "features": {
         "ghcr.io/devcontainers-contrib/features/black:1": {},
@@ -208,17 +213,12 @@ Let's create our first GitHub repository. This repository will hold `Hello world
             "cschleiden.vscode-github-actions",
             "DavidAnson.vscode-markdownlint",
             "GitHub.vscode-pull-request-github",
-            "ms-azuretools.vscode-docker",
             "ms-python.python",
             "ms-python.vscode-pylance",
-            "redhat.vscode-yaml",
-            "ZainChen.json"
+            "redhat.vscode-yaml"
           ]
         }
-      },
-      "forwardPorts": [
-        8080
-      ]
+      }
     }
     ```   
 
