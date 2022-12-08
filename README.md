@@ -186,7 +186,7 @@ Let's create our first GitHub repository. This repository will hold `Hello world
         "cpus": 4
       },
       "portsAttributes": {
-        "5000": {
+        "8080": {
           "label": "Application",
           "onAutoForward": "openPreview"
         }
@@ -217,7 +217,7 @@ Let's create our first GitHub repository. This repository will hold `Hello world
         }
       },
       "forwardPorts": [
-        5000
+        8080
       ]
     }
     ```   
