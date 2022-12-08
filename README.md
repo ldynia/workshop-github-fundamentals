@@ -155,19 +155,20 @@ Let's create our first GitHub repository. This repository will hold `Hello world
     ```Dockerfile
     FROM python:3.9.5-alpine
 
+    # Build arguments
     ARG FLASK_DEBUG=False \
         GROUP=nogroup \
         USER=nobody \
         WORKDIR=/usr/src
 
-    # Setup environment variables
+    # Environment variables
     ENV FLASK_APP=$WORKDIR/run.py \
         FLASK_DEBUG=$FLASK_DEBUG \
         HOST=0.0.0.0 \
         PORT=8080 \
         PYTHONUNBUFFERED=True
 
-    # Setup file system
+    # App's file system
     WORKDIR $WORKDIR
     RUN chown $USER:$GROUP $WORKDIR
     COPY --chown=$USER:$GROUP app/ $WORKDIR
@@ -175,16 +176,16 @@ Let's create our first GitHub repository. This repository will hold `Hello world
     # Install OS packages
     RUN apk add vim
 
-    # Upgrade pip & install python packages
+    # Install python packages
     RUN pip install --upgrade pip --requirement requirements.txt
 
-    # Indicate which port to expose
+    # Expose app's port
     EXPOSE $PORT
 
-    # Rootless run
+    # Run rootless
     USER $USER:$GROUP
 
-    # Start app server
+    # Start app
     CMD flask run --host=$HOST --port=$PORT
     ```
     
