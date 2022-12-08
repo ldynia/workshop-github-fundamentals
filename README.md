@@ -90,7 +90,7 @@ Let's create our first GitHub repository. This repository will hold `Hello world
 
     ![New Repository](assets/img/git/btn_new.png)
 
-1. Fill Repository information and click the `Create repository` button.
+1. Name repository `flask-init-mini` and click the `Create repository` button.
 
     ![Repository](assets/img/git/new_repo.png)
 
