@@ -2,13 +2,16 @@
 
 #### Objectives
 
-To create an **open source movie recommendation engine** implemented in a microservice architecture. By the end of this workshop, you’ll know how to:
+To create a movie recommendation engine as an Open Source Software implemented in a microservice architecture.
 
-- [X] History of OpenSource - PPT presentation
-- [X] How to create an Open Source project
+By the end of this workshop, you’ll know:
+
+- [X] History of OpenSource
+- [X] How to create an Open Source Software
 - [X] [Markdown markup language](https://guides.github.com/features/mastering-markdown/)
 - [X] [Docker](#1-github-repository---github-templates)
 - [X] [Github Repository / Templates](#1-github-repository---github-templates)
+- [X] [Github Codespaces](https://github.com/features/codespaces)
 - [X] [Microservice](#2-microservice)
 - [X] [Github Issues](#3-github-issues)
 - [X] [Github Releases / Tag](#4-github-releases--tags)
@@ -20,15 +23,14 @@ To create an **open source movie recommendation engine** implemented in a micros
 
 And you’ll be able to:
 
-- [X] Create an open source project.
-- [X] Build a team to collaborate on the project.
-- [X] Collaborate on an open source project by creating issues and doing Pull Requests.
-- [X] Utilize CI/CD pipelines to build your software with github actions.
-- [X] Host your portfolio page.
-- [X] Use github’s advanced search.
-- [X] User GIT version control.
-- [X] Share your software on dockerhub.com
-- [X] Build software with Docker.
+- [X] Create an Open Source Software on GitHub
+- [X] Collaborate on an Open Source Software by creating GitHub Issues and doing Pull Requests
+- [X] Build CI/CD pipelines with GitHub Acttions
+- [X] Host website with GitHub Pages
+- [X] Use GitHub’s advanced search
+- [X] User GIT version control
+- [X] Build software with Docker
+- [X] Share your docker images on dockerhub.com
 
 #### Requirements
 
