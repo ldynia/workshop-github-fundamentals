@@ -35,15 +35,6 @@ And you’ll be able to:
 - [GitHub](https://github.com/) account
 - [DockerHub](https://hub.docker.com/) account
 
-#### Links
-
-- [choosealicense.com](https://choosealicense.com/)
-- [Dockerfile](https://docs.docker.com/engine/reference/builder/)
-- [Markdown](https://guides.github.com/features/mastering-markdown/#GitHub-flavored-markdown)
-- [Jekyll](https://jekyllrb.com/)
-- [GitHub Actions Docs](https://docs.github.com/en/actions)
-- [GitHub Search Docs](https://docs.github.com/en/github/searching-for-information-on-github/searching-on-github)
-
 # Warning - No licence no Open Source !!!
 
 Choosing the right license when creating an open source project is [crucial](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/licensing-a-repository#choosing-the-right-license).
