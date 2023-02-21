@@ -798,10 +798,10 @@ Let's create our first GitHub repository. This repository will hold `Hello world
 <details>
   <summary>Copy</summary>
 
-  - `if ((path:*.yaml OR path:*.yml) AND path:.github/workflows) language:YAML`
-  - `HEALTHCHECK filename:Dockerfile language:Dockerfile`
   - `flask in:name,description`
-
+  - `HEALTHCHECK path:**/Dockerfile language:Dockerfile`
+  - `if ((path:*.yaml OR path:*.yml) AND path:.github/workflows) language:YAML`
+  
 </details>
 
 ![Advanced Search GitHub Actions](assets/img/git/as_actions.png)
