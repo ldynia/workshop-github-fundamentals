@@ -572,6 +572,7 @@ Let's create our first GitHub repository. This repository will hold `Hello world
     ## API
 
     Filter up algorithm
+    
     ```bash
     curl "http://localhost/api/v1/movies/recommend?title=Kingpin"
     curl "http://localhost/api/v1/movies/recommend?title=Lost%20in%20Translation"
@@ -580,17 +581,20 @@ Let's create our first GitHub repository. This repository will hold `Hello world
     ## Testing
 
     Unit test
+    
     ```bash
     docker exec sherlock pytest
     ```
 
     Code coverage
+    
     ```bash
     docker exec sherlock coverage run -m pytest
     docker exec sherlock coverage report
     ```
     
     Stop container
+    
     ```bash
     docker stop sherlock
     ```
