@@ -280,6 +280,13 @@ Let's create our first GitHub repository. This repository will hold `Hello world
 
     [![Template repository](assets/img/git/checkbox_template.png)](https://github.com/ldynia/flask-init-mini/settings)
 
+1. Spin up Codespaces for this repository 
+   - Click `Code` button
+   - Select `Codespaces` tab
+   - Click `Create codespace on main` button
+
+1. Follow `REDME.md` instructions in `Installation`, `Testing` and `API` sections.
+
 ## 2. Microservice
 
 <details>
@@ -599,8 +606,12 @@ Let's create our first GitHub repository. This repository will hold `Hello world
     docker stop sherlock
     ```
     ~~~
+1. Spin up Codespaces for this repository 
+   - Click `Code` button
+   - Select `Codespaces` tab
+   - Click `Create codespace on main` button
 
-1. Follow instructions in `Installation`, `Testing` and `API` sections.
+1. Follow `REDME.md` instructions in `Installation`, `Testing` and `API` sections.
 
 ## 3. GitHub Issues
 
