@@ -635,6 +635,8 @@ Let's create our first GitHub repository. This repository will hold `Hello world
     [![Issues](assets/img/git/issues_new_issue.png)](https://github.com/ldynia/flask-sherlock/issues/new)
     [![Issues](assets/img/git/issue.png)](https://github.com/ldynia/flask-sherlock/issues/new)
 
+1. Fix invalid date and close the issue
+
 ## 4. GitHub Releases / Tags
 
 <details>
