@@ -245,6 +245,7 @@ Let's create our first GitHub repository. This repository will hold `Hello world
     docker run --detach --name flask-app --publish 80:8080 --rm flask-mini
     docker ps
     ```
+    
     ## API
 
     ```bash
@@ -254,17 +255,20 @@ Let's create our first GitHub repository. This repository will hold `Hello world
     ## Testing
 
     Unit test
+    
     ```bash
     docker exec flask-app pytest
     ```
 
     Code coverage
+    
     ```bash
     docker exec flask-app coverage run -m pytest
     docker exec flask-app coverage report
     ```
     
     Stop container
+    
     ```bash
     docker stop flask-app
     ```
