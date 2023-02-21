@@ -793,11 +793,12 @@ Let's create our first GitHub repository. This repository will hold `Hello world
 
 - [https://github.com/search](https://github.com/search)
 - [GitHub search docs](https://docs.github.com/en/github/searching-for-information-on-github/searching-on-github)
+- [GitHub Code Search (beta)](https://docs.github.com/en/search-github/github-code-search/understanding-github-code-search-syntax)
 
 <details>
   <summary>Copy</summary>
 
-  - `if extension:yaml extension:yml path:.github/workflows language:YAML`
+  - `if ((path:*.yaml OR path:*.yml) AND path:.github/workflows) language:YAML`
   - `HEALTHCHECK filename:Dockerfile language:Dockerfile`
   - `flask in:name,description`
 
