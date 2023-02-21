@@ -304,7 +304,7 @@ Let's create our first GitHub repository. This repository will hold `Hello world
 
 </details>
 
-1. Create [New Repository](https://github.com/new) and fill it in according to values listed on the image. Notice that this time we choose **flask-init-mini** project from `Repository template` as a base for our microservice.
+1. Create [New Repository](https://github.com/new) and fill it in according to values listed on the image. Notice that this time we choose `flask-init-mini` project from `Repository template` as a base for our microservice. Name new repository `flask-sherlock`
     ![New Repository](assets/img/git/new_repo_from_template.png)
 
 1. Click the [**Add File**](https://github.com/ldynia/flask-init-mini) button and add/update blow files.
