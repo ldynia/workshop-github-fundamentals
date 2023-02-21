@@ -13,8 +13,8 @@ By the end of this workshop, you’ll know:
 - [X] [Github Repository / Templates](#1-github-repository---github-templates)
 - [X] [Github Codespaces](https://github.com/features/codespaces)
 - [X] [Microservice](#2-microservice)
-- [X] [Github Releases / Tag](#3-github-releases--tags)
-- [X] [Github Issues](#4-github-issues)
+- [X] [Github Issues](#3-github-issues)
+- [X] [Github Releases / Tag](#4-github-releases--tags)
 - [X] [Github Actions](#5-github-actions)
 - [X] [Pull Requests](#6-github-pull-request)
 - [X] [Github Advanced Search](#7-github-advanced-search)
@@ -606,6 +606,7 @@ Let's create our first GitHub repository. This repository will hold `Hello world
     docker stop sherlock
     ```
     ~~~
+
 1. Spin up Codespaces for this repository 
    - Click `Code` button
    - Select `Codespaces` tab
@@ -613,24 +614,7 @@ Let's create our first GitHub repository. This repository will hold `Hello world
 
 1. Follow `REDME.md` instructions in `Installation`, `Testing` and `API` sections.
 
-## 3. GitHub Releases / Tags
-
-<details>
-  <summary>Context</summary>
-
-  It's very seldom that your software will be released only in one version, e.g. `v1.0.0`. As your project grows, you will have a bug to fix and feature to add. GitHub Releases allows you to create tagged artifacts of your software.
-
-</details>
-
-1. In your repository click [tags](https://github.com/ldynia/flask-sherlock/tags) icon.
-
-    [![Tags](assets/img/git/file_navigation_tags.png)](https://github.com/ldynia/flask-sherlock/tags)
-
-1. Click the `Releases` tab, next click `Create a new release` button, fill it with information specified on the picture below. Once done click the `Publish release` button.
-
-    ![New Release](assets/img/git/release.png)
-
-## 4. GitHub Issues
+## 3. GitHub Issues
 
 <details>
   <summary>Context</summary>
@@ -650,6 +634,23 @@ Let's create our first GitHub repository. This repository will hold `Hello world
     [![Issues](assets/img/git/tabs_issues.png)](https://github.com/ldynia/flask-sherlock/issues)
     [![Issues](assets/img/git/issues_new_issue.png)](https://github.com/ldynia/flask-sherlock/issues/new)
     [![Issues](assets/img/git/issue.png)](https://github.com/ldynia/flask-sherlock/issues/new)
+
+## 4. GitHub Releases / Tags
+
+<details>
+  <summary>Context</summary>
+
+  It's very seldom that your software will be released only in one version, e.g. `v1.0.0`. As your project grows, you will have a bug to fix and feature to add. GitHub Releases allows you to create tagged artifacts of your software.
+
+</details>
+
+1. In your repository click [tags](https://github.com/ldynia/flask-sherlock/tags) icon.
+
+    [![Tags](assets/img/git/file_navigation_tags.png)](https://github.com/ldynia/flask-sherlock/tags)
+
+1. Click the `Releases` tab, next click `Create a new release` button, fill it with information specified on the picture below. Once done click the `Publish release` button.
+
+    ![New Release](assets/img/git/release.png)
 
 ## 5. GitHub Actions
 
