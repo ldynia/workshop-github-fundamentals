@@ -108,11 +108,23 @@ GitHub repository is:
 - A place for security scanning - GitHub Security
 - And many more ...
 
+## 2. GitHub Template
+
 ### What is a GitHub template?
 
 A GitHub Template is a way of marking your repository as a reusable blueprint. GitHub Template allows to generate new repositories that will preserve the same structure, branches and files as the blueprint repository.
 
-## 2. Microservice
+## 3. GitHub Codespaces
+
+### What is a GitHub codespaces?
+
+A codespace is a Ubuntu Linux development environment that's hosted in the cloud. Codespace is a Docker container that runs in a VirtualMachine. Codespaces is easily customizzable by `devcontainer.json` file -file that describe your development environment.
+
+### Why to use GitHub codespaces?
+
+To get freedom form your laptop. With codespace you can litteraly develop on a tablet. Any devices that has a internet browser. 
+
+## 4. Microservice
 
 ### What is microservice and why to use them?
 
