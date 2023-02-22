@@ -6,9 +6,6 @@
 
 Good morning, good afternoon and good evening everyone. My name is Lukasz Dynowski and I'm an independent consultant located in Copenhagen, Denmark. Having over a decade of experience in IT I was involved in over hundreds of projects. I managed to work for a start-up, in academia and for a big organization working on premise and in the cloud. I managed to do work as a FullStack Developer, DevOps Engineer, Software Architect and more. The closest to my heart though is Backend in its full spectrum that is development and operations.
 
-~~### How I'm here~~
-~~How I arrived here is a story of hard work. I was in the winning team for the first ever Architectural Software Kata organized by O'Reilly this allowed me to be connected with correct people. I wrote a proposal which resonated with and O'Reilly gave me a creative freedom to create this workshop.~~
-
 ### About the workshop
 
 So here I'm with around 10 years of experience with GitHub. Although, the title GitHub Fundamentals might sound trivial and well explored, you will be surprise that this workshop encapsulates several decades of software engineering. My goal is to show you how to create an open source project, how to contribute to an open source project, demonstrate you DevOps practices by utilizing GitHub actions, teach you how to create a microservice, and finally show you how you can use GitHub as a branding platform, so you can stand out from the crowd.
