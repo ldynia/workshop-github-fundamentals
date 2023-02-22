@@ -17,8 +17,9 @@ So here I'm with around 10 years of experience with GitHub. Although, the title 
 
 If you have any questions that cannot be answered during this workshop then don't be shy to drop me a message on the Linked in or just simply connect with me. Furthermore, it's important for us to deliver the best quality workshop, so please leave your feedback, so we can improve on it.
 
-~~### Personal Note~~
-~~On the personal note, I'd like to congratulate you to choose O'Reilly as a learning platform. I know that you are the smartest people in the world and I'm scarred because you are the smartest people in the world.~~
+### Personal Note
+
+On a personal note, I'd like to congratulate you for choosing O'Reilly as a learning platform, I believe it’s the shortest way to get access to various experts.
 
 ### Structured
 
