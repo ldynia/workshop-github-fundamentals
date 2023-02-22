@@ -124,8 +124,6 @@ Microservices/Microservice Architecture - is an architectural style that structu
 - Organized around business capabilities.
 - Owned by a small team.
 
-### What are typical features of microservice?
-
 A typical microservice exposes following features:
 
 - Is structured around business boundaries / bounded context
