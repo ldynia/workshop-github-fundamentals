@@ -184,8 +184,8 @@ Let's create our first GitHub repository. This repository will hold `Hello world
       "image": "mcr.microsoft.com/devcontainers/python:3.11",
       "hostRequirements": {
         "cpus": 2,
-        "memory": "8gb",
-        "storage": "32gb" 
+        "memory": "4gb",
+        "storage": "16gb" 
       },
       "features": {
         "ghcr.io/devcontainers-contrib/features/black:1": {},
