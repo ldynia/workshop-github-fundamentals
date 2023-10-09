@@ -249,7 +249,7 @@ Let's create our first GitHub repository. This repository will hold `Hello world
     ## API
 
     ```bash
-    curl "http://localhost"
+    curl "http://localhost"; echo
     ```
 
     ## Testing
