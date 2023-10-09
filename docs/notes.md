@@ -81,7 +81,7 @@ Markdown is a markup language. The goal was to create an easy to read and write 
 
 ## Docker
 
-Docker is a containerization platform created by Solomon Hykes in 2013 (10 years ago). Containers are executable artifacts containing OS, OS's libraries, application source code and app's dependencies, movable as a docker image and described in a Dockerfile.
+Docker is a containerization platform created by Solomon Hykes in 2013 (10 years ago). Containers are executable artifacts containing OS, OS's libraries, application source code, and dependencies described in a Dockerfile and movable as a docker image.
 
 ## Jekyll
 
