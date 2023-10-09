@@ -799,7 +799,7 @@ Let's create our first GitHub repository. This repository will hold `Hello world
   <summary>Copy</summary>
 
   - `flask in:name,description`
-  - `HEALTHCHECK path:**/Dockerfile language:Dockerfile`
+  - `HEALTHCHECK (path:**/Dockerfile OR path:**/*.Dockerfile) language:Dockerfile`
   - `if ((path:*.yaml OR path:*.yml) AND path:.github/workflows) language:YAML`
   
 </details>
