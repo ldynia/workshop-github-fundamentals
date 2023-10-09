@@ -37,27 +37,27 @@ GitHub          2016    GitHub Universe
 GitHub          2018    Acquisition $7.5 billion
 ```
 
-1970s Unix - AT&T Bell Labs research center [Ken Thompson](https://en.wikipedia.org/wiki/Ken_Thompson), [Dennis Ritchie](https://en.wikipedia.org/wiki/Dennis_Ritchie), started development of Unix - [Multics](https://en.wikipedia.org/wiki/Multics)-like operating system. Unix is license as a proprietary software that means creator or publisher of a software reserves some rights to use, modify, share modifications, or share the software.
+1970s Unix - AT&T Bell Labs research center [Ken Thompson](https://en.wikipedia.org/wiki/Ken_Thompson), [Dennis Ritchie](https://en.wikipedia.org/wiki/Dennis_Ritchie), started development of Unix - [Multics](https://en.wikipedia.org/wiki/Multics)-like operating system. Unix is licensed as proprietary software which means the creator or publisher of software reserves some rights to use, modify, share modifications, or share the software.
 
-1983 GNU ("GNU's Not Unix!") Project is created by [Richard Stallman](https://en.wikipedia.org/wiki/Richard_Stallman) to create free a Unix-like operating system with source code that could be copied, modified, and redistributed (free/libre software). The work was funded by donations from individuals and companies to the [Free Software Foundation](https://www.fsf.org/about).
+1983 GNU ("GNU's Not Unix!") Project was created by [Richard Stallman](https://en.wikipedia.org/wiki/Richard_Stallman) to create free a Unix-like operating system with source code that could be copied, modified, and redistributed (free/libre software). The work was funded by donations from individuals and companies to the [Free Software Foundation](https://www.fsf.org/about).
 
 1987 GCC (GNU C Compiler/Compiler Collection ) 1.0 Released. - C compiler and collection of libraries.
 
-1989 [GPL](https://www.gnu.org/licenses/old-licenses/gpl-1.0.html) (GNU GPL or GNU General Public License) is released for use with programs released as part of the GNU project. Licence give you four Freedoms: Freedom to run a program for any purpose, Freedom to study the mechanics of the program and modify it, Freedom to redistribute copies, and Freedom to improve and change modified versions for public use.
+1989 [GPL](https://www.gnu.org/licenses/old-licenses/gpl-1.0.html) (GNU GPL or GNU General Public License) is released for use with programs released as part of the GNU project. License gives you four Freedom to: run a program for any purpose, study the mechanics of the program and modify it, redistribute copies, and  improve and change modified versions for public use.
 
 1991 LINUX Kernel - [GPL2](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html) licenses (28.8 million lines of code)
 
 1998 Open Source -  [Open Source Initiative](https://opensource.org/) is founded by [Bruce Perens](https://en.wikipedia.org/wiki/Bruce_Perens) and [Eric Raymond](https://en.wikipedia.org/wiki/Eric_S._Raymond) to promote [open source movement](https://en.wikipedia.org/wiki/Open-source-software_movement). The term edged out "sourceware" and was coined by [Christine Peters](https://en.wikipedia.org/wiki/Christine_Peterson) to describe free software.
 
-2005 GIT - Being dissatisfied with Source Control Management (SCM) system of that time, and inspired by workflow of [BitKeeper](https://en.wikipedia.org/wiki/BitKeeper) Linus Torvalds created GIT for purpose of development the Linux kernel.
+2005 GIT - Being dissatisfied with the Source Control Management (SCM) system of that time and inspired by the workflow of [BitKeeper](https://en.wikipedia.org/wiki/BitKeeper) Linus Torvalds created GIT for the purpose of developing the Linux kernel.
 
 2008 GitHub - Known as Logical Awesome LLC GitHub is founded.
 
-[“Free software”](https://www.gnu.org/philosophy/free-sw.html) means software that respects users' freedom and community. Roughly, it means that the users have the freedom to run, copy, distribute, study, change and improve the software. Thus, “free software” is a matter of liberty, not price. To understand the concept, you should think of “free” as in “free speech,” not as in “free beer”. We sometimes call it “libre software,” borrowing the French or Spanish word for “free” as in freedom, to show we do not mean the software is gratis.
+[“Free software”](https://www.gnu.org/philosophy/free-sw.html) means software that respects users' freedom and community. Roughly, it means that the users have the freedom to run, copy, distribute, study, change, and improve the software. Thus, “free software” is a matter of liberty, not price. To understand the concept, you should think of “free” as in “free speech,” not as in “free beer”. We sometimes call it “libre software,” borrowing the French or Spanish word for “free” as in freedom, to show we do not mean the software is gratis.
 
 ## Licenses - Permissive vs Copyleft
 
-Permissive licenses allow you to copy, modify, recombine, and redistribute the work with minimal restrictions. Usually, only attribution is required. Copyleft provides the same permission as a permissive license, but requires you to release any derivative works you make under the same copyleft license.
+Permissive licenses allow you to copy, modify, recombine, and redistribute the work with minimal restrictions. Usually, only attribution is required. Copyleft provides the same permission as a permissive license but requires you to release any derivative works you make under the same copyleft license.
 
 | | Copyleft | Permissive |
 | - | --- | ----------- |
@@ -81,11 +81,11 @@ Markdown is a markup language. The goal was to create an easy to read and write 
 
 ## Docker
 
-Docker is a containerization platform created by Solomon Hykes in 2013 (10 years ago). Containers are executable artifacts containing OS, OS's libraries, application source code and app's dependencies, movable as a docker images and described in a Dockerfile.
+Docker is a containerization platform created by Solomon Hykes in 2013 (10 years ago). Containers are executable artifacts containing OS, OS's libraries, application source code and app's dependencies, movable as a docker image and described in a Dockerfile.
 
 ## Jekyll
 
-Static site generator written by GitHub's co-founder Tom Preston-Werner in 2008. It takes Markdown as an input and produces static web page ready to be served by any HTTP server. It can be used with any front-end framework.
+Static site generator written by GitHub's co-founder Tom Preston-Werner in 2008. It takes Markdown as an input and produces a static web page ready to be served by any HTTP server. It can be used with any front-end framework.
 
 ---
 
@@ -95,7 +95,7 @@ Static site generator written by GitHub's co-founder Tom Preston-Werner in 2008.
 
 ### What is a GitHub repository?
 
-A repository is a place where your git project and its files resides. Typical repository stores source code along with .git folder - a directory which tracks snapshot of changes introduced to your files.
+A repository is a place where your git project and its files reside. A typical repository stores source code along with .git folder - a directory which tracks snapshot of changes introduced to your files.
 
 ### Why to use GitHub repository?
 
@@ -112,7 +112,7 @@ GitHub repository is:
 
 ### What is a GitHub template?
 
-A GitHub Template is a way of marking your repository as a reusable blueprint. GitHub Template allows to generate new repositories that will preserve the same structure, branches and files as the blueprint repository.
+A GitHub Template is a way of marking your repository as a reusable blueprint. GitHub Template allows to generate of new repositories that will preserve the same structure, branches, and files as the blueprint repository.
 
 ## 3. GitHub Codespaces
 
@@ -122,7 +122,7 @@ A codespace is a Ubuntu Linux development environment that's hosted in the cloud
 
 ### Why to use GitHub codespaces?
 
-To get freedom form your laptop. With codespace you can litteraly develop on a tablet. Any devices that has a internet browser. 
+To get freedom from your laptop. With codespace, you can literally develop on a tablet. Any device that has an internet browser. 
 
 ## 4. Microservice
 
@@ -187,11 +187,11 @@ GitHub Pages is a hosting service for static sites, it will serve any static fil
 
 ### Why to use GitHub Pages?
 
-The short answer is for **branding** and **promotion**. You can use it for blogging, or as a journal of your work. You can promote yourself with my_username.github.io or your project my_username.github.io/my_project. Moreover, you have option to brand your work with a custom domain.
+The short answer is for **branding** and **promotion**. You can use it for blogging, or as a journal of your work. You can promote yourself with my_username.github.io or your project my_username.github.io/my_project. Moreover, you have the option to brand your work with a custom domain.
 
 ## 9. GitHub Wikis
 
-Wiki is an important part of an open source project. READEME.md is intended to be used as a brief documentation on how to get started with a project. Wiki on the other hand are intended to provide information about the project that can't be expressed by code.
+Wiki is an important part of an open-source project. READEME.md is intended to be used as a brief documentation on how to get started with a project. Wiki on the other hand are intended to provide information about the project that can't be expressed by code.
 
 --- 
 
