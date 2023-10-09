@@ -844,7 +844,7 @@ Let's create our first GitHub repository. This repository will hold `Hello world
 
     Sherlock is the best movie recommendation engine ever created. Isn't it Dr. [Jekyll](https://jekyllrb.com/)? More advanced references please look up how [Jekyll docs](https://github.com/jekyll/jekyll/tree/master/docs) are structured.
 
-    ![sherlock](https://files.wallpaperpass.com/2019/09/sherlock%20wallpaper%2081%20-%201920x1200-1024x640.jpg)
+    ![sherlock](https://c8.alamy.com/comp/HHCX7G/sherlock-holmes-with-computer-laptop-silhouette-sitting-in-rocking-HHCX7G.jpg)
 
     ## Multiverse
 
