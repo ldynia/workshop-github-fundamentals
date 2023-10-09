@@ -696,7 +696,7 @@ Let's create our first GitHub repository. This repository will hold `Hello world
           CODE_COVERAGE_THRESHOLD: 90
         strategy:
           matrix:
-            python-version: [3.10, 3.11]
+            python-version: ["3.10", "3.11"]
         steps:
          - uses: actions/checkout@v3
          - name: Set up Python ${{ matrix.python-version }}
