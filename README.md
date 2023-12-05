@@ -30,7 +30,7 @@ And you’ll be able to:
 - [X] Use GitHub’s advanced search
 - [X] User GIT version control
 - [X] Build software with Docker
-- [X] Share your docker images on dockerhub.com
+- [X] Share your docker images on hub.docker.com
 
 #### Requirements
 
@@ -219,12 +219,11 @@ Let's create our first GitHub repository. This repository will hold `Hello world
 
     This project is a boilerplate for future Flask applications.
 
-    Below steps can be executed on any unix like system. I will use ubuntu deployed on
-    [O'Reilly's sandbox](https://learning.oreilly.com/scenarios/ubuntu-sandbox/9781492062837) (alternatively you could use [Katacoda's playground](https://www.katacoda.com/courses/ubuntu/playground2004)). Once the sandbox/playground is ready, execute instructions specified in below sections.
+    The steps below can be executed on any unix-like system.
 
     ## Setup SSH key
 
-    **This step is option and can be omitted.**
+    **This step is an option and can be omitted.**
 
     Create ssh key and add it to GitHub's [SSH keys](https://github.com/settings/keys) settings.
 
