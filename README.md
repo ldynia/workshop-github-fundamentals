@@ -162,7 +162,7 @@ Let's create our first GitHub repository. This repository will hold `Hello world
     COPY --chown=$USER:$GROUP app/ $WORKDIR
 
     # Install OS packages
-    RUN apk add vim
+    RUN apk add --no-cache curl
 
     # Install python packages
     RUN pip install --upgrade pip --requirement requirements.txt
