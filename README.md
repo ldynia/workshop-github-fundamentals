@@ -174,6 +174,9 @@ Let's create our first GitHub repository. This repository will hold `Hello world
     USER $USER:$GROUP
 
     # Start app
+    HEALTHCHECK --retries=3 --interval=5s --timeout=1s CMD curl --fail localhost:$PORT || exit 1
+
+    # Start app
     CMD flask run --host=$HOST --port=$PORT
     ```
     
