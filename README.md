@@ -429,7 +429,6 @@ Let's create our first GitHub repository. This repository will hold `Hello world
 
             return sorted(movies, key=lambda movie: movie["rating"], reverse=True)
 
-
         def __lucky_recommendation(self, movies):
             """
             I feel lucky - random choice.
