@@ -86,7 +86,7 @@ Let's create our first GitHub repository. This repository will hold `Hello world
 
     [![File Navigation](assets/img/git/file_navigation_add_file.png)](https://github.com/ldynia/flask-init-mini)
 
-    **/app/requirements.txt**
+    **app/requirements.txt**
 
     ```
     coverage==7.3.2
