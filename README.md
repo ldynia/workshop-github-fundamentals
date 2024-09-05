@@ -174,7 +174,7 @@ Let's create our first GitHub repository. This repository will hold `Hello world
     USER $USER:$GROUP
 
     # Start app
-    CMD ["flask", "run", "--host=$HOST", "--port=$PORT"]
+    CMD ["sh", "-c", "flask run --host=$HOST --port=$PORT"]
     ```
     
     **.devcontainer/devcontainer.json**
