@@ -24,8 +24,8 @@ By the end of this workshop, you’ll know:
 And you’ll be able to:
 
 - [X] Create an Open Source Software on GitHub
-- [X] Collaborate on an Open Source Software by creating GitHub Issues and doing Pull Requests
-- [X] Build CI/CD pipelines with GitHub Acttions
+- [X] Collaborate on Open Source Software by creating GitHub Issues and doing Pull Requests
+- [X] Build CI/CD pipelines with GitHub Actions
 - [X] Host website with GitHub Pages
 - [X] Use GitHub’s advanced search
 - [X] User GIT version control
@@ -37,30 +37,30 @@ And you’ll be able to:
 - [GitHub](https://github.com/) account
 - [DockerHub](https://hub.docker.com/) account
 
-# Warning - No licence no Open Source !!!
+# Warning - No license, no Open Source !!!
 
-Choosing the right license when creating an open source project is [crucial](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/licensing-a-repository#choosing-the-right-license).
+Choosing the right license when creating an open-source project is [crucial](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/licensing-a-repository#choosing-the-right-license).
 
-> "**without a license**, the default copyright laws apply, meaning that you retain all rights to your source code and **no one may reproduce, distribute, or create derivative works from your work.**"
+> "**without a license**, the default copyright laws apply, meaning that you retain all rights to your source code, and **no one may reproduce, distribute, or create derivative works from your work.**"
 
-There are many available [open source licenses](https://opensource.org/licenses). If you are confused which one to use, visit [choosealicense.com](https://choosealicense.com/licenses/) - a comprehensive guide about open source licenses.
+There are many available [open-source licenses](https://opensource.org/licenses). If you are confused about which one to use, visit [choosealicense.com](https://choosealicense.com/licenses/) - a comprehensive guide about open source licenses.
 
 Additional information about **legal aspects of having no license** can be found [here](https://opensource.stackexchange.com/questions/1720/what-can-i-assume-if-a-publicly-published-project-has-no-license).
 
-## 1. Github Repository /  GitHub Templates
+## 1. GitHub Repository /  GitHub Templates
 
 <details>
   <summary>Context</summary>
 
   #### What is a GitHub repository?
 
-  A repository is a place where your git **project** and its **files** resides. Typical repository stores source code along with `.git` folder - a directory which tracks snapshot of changes introduced to your files.
+  A repository is a place where your git **project** and its **files** reside. A typical repository stores source code along with the `.git` folder - a directory that tracks snapshots of changes introduced to your files.
 
-  #### Why to use GitHub repository?
+  #### Why use the GitHub repository?
 
   GitHub repository is:
   - A place for documenting your project - **GitHub Wiki**
-  - A place for automatizing tasks within software development life cycle - **GitHub Actions**
+  - A place for automatizing tasks within the software development life cycle - **GitHub Actions**
   - A place for organizing and tracking work items - **GitHub Projects**
   - A forum for sharing and raising questions - **GitHub Issues**
   - A place for security scanning - **GitHub Security**
@@ -68,21 +68,21 @@ Additional information about **legal aspects of having no license** can be found
 
   #### What is a GitHub template?
 
-  A GitHub Template is a way of marking your repository as a reusable blueprint. GitHub Template allows to generate new repositories that will preserve the same structure, branches and files as the blueprint repository.
+  A GitHub Template is a way of marking your repository as a reusable blueprint. GitHub Template allows to create new repositories that preserve the same structure, branches, and files as the blueprint repository.
 
 </details>
 
-Let's create our first GitHub repository. This repository will hold `Hello world!` Flask application, and will become our GitHub template for a microservice that we'll build in the next step.
+Let's create our first GitHub repository. This repository will hold `Hello world!` Flask application and will become our GitHub template for a microservice that we'll build in the next step.
 
 1. On the [GitHub](https://github.com/) page click [New](https://github.com/new) button.
 
     ![New Repository](assets/img/git/btn_new.png)
 
-1. Name repository `flask-init-mini` and click the `Create repository` button.
+1. Name the repository `flask-init-mini` and click the `Create repository` button.
 
     ![Repository](assets/img/git/new_repo.png)
 
-1. What's left is to create a Flask application. If you are not familiar with Flask, read the [quick start](https://flask.palletsprojects.com/en/1.1.x/quickstart/) guide. In GitHub's interface by clicking the `Add file` button and selecting `Create new file`.
+1. What's left is to create a Flask application. If you are not familiar with Flask, read the [quick start](https://flask.palletsprojects.com/en/1.1.x/quickstart/) guide. In GitHub's interface, click the `Add file` button and select `Create new file`.
 
     [![File Navigation](assets/img/git/file_navigation_add_file.png)](https://github.com/ldynia/flask-init-mini)
 
@@ -219,7 +219,7 @@ Let's create our first GitHub repository. This repository will hold `Hello world
 
     This project is a boilerplate for future Flask applications.
 
-    The steps below can be executed on any unix-like system.
+    The steps below can be executed on any Unix-like system.
 
     ## Setup SSH key
 
@@ -239,7 +239,7 @@ Let's create our first GitHub repository. This repository will hold `Hello world
     git clone https://github.com/ldynia/flask-init-mini.git
     cd flask-init-mini
 
-    # Building and running docker container
+    # Building and running the docker container
     docker build --tag flask-mini --build-arg FLASK_DEBUG=True .
     docker run --detach --name flask-app --publish 80:8080 --rm flask-mini
     docker ps
@@ -273,25 +273,25 @@ Let's create our first GitHub repository. This repository will hold `Hello world
     ```
     ~~~
 
-1. Let's mark repository to a template by clicking repository `Settings` tab, and selecting `Template repository` checkbox.
+1. Let's mark the repository as a template by clicking the repository `Settings` tab and selecting the `Template repository` checkbox.
 
     [![Settings](assets/img/git/tabs_settings.png)](https://github.com/ldynia/flask-init-mini/settings)
 
     [![Template repository](assets/img/git/checkbox_template.png)](https://github.com/ldynia/flask-init-mini/settings)
 
 1. Spin up Codespaces for this repository 
-   - Click `Code` button
+   - Click the `Code` button
    - Select `Codespaces` tab
-   - Click `Create codespace on main` button
+   - Click the `Create codespace on main` button
 
-1. Follow `REDME.md` instructions in `Installation`, `Testing` and `API` sections.
+1. Follow `REDME.md` instructions in the `Installation`, `Testing`, and `API` sections.
 
 ## 2. Microservice
 
 <details>
   <summary>Context</summary>
 
-  #### What is  microservice and why to use them?
+  #### What are microservices, and why to use them?
 
   Microservices/Microservice Architecture - is an **architectural style that structures an application as a collection of services** that are:
   - Loosely coupled.
@@ -302,15 +302,15 @@ Let's create our first GitHub repository. This repository will hold `Hello world
 
   #### What are typical features of microservice?
 
-  A typical microservice exposes following features:
+  A typical microservice exposes the following features:
   - Is structured around business boundaries / [bounded context](https://www.infoq.com/news/2019/06/bounded-context-eric-evans/)
-  - Has independent database.
+  - Has an independent database.
   - Communicates over the network.
-  - Has well defined API.
+  - Has well-defined API.
 
 </details>
 
-1. Create [New Repository](https://github.com/new) and fill it in according to values listed on the image. Notice that this time we choose `flask-init-mini` project from `Repository template` as a base for our microservice. Name new repository `flask-sherlock`
+1. Create [New Repository](https://github.com/new) and fill it in according to the values listed on the image. Notice that this time we choose the `flask-init-mini` project from the `Repository template` as a base for our microservice. Name new repository `flask-sherlock`
     ![New Repository](assets/img/git/new_repo_from_template.png)
 
 1. Click the [**Add File**](https://github.com/ldynia/flask-init-mini) button and add/update blow files.
@@ -546,13 +546,13 @@ Let's create our first GitHub repository. This repository will hold `Hello world
     ~~~
     # Sherlock
 
-    Welcome to Sherlock project. Sherlock is a movie recommendation microservice written in Flask.
+    Welcome to the Sherlock project. Sherlock is a movie recommendation microservice written in Flask.
 
-    Below steps can be executed on any unix like system. I will use ubuntu deployed on [O'Reilly's sandbox](https://learning.oreilly.com/scenarios/ubuntu-sandbox/9781492062837) (alternatively you could use [Katacoda's playground](https://www.katacoda.com/courses/ubuntu/playground2004)). Once the sandbox/playground is ready, execute instructions specified in below sections.
+    The steps below can be executed on any Unix-like system. I will use Ubuntu deployed on [O'Reilly's sandbox](https://learning.oreilly.com/scenarios/ubuntu-sandbox/9781492062837) (alternatively, you could use [Katacoda's playground](https://www.katacoda.com/courses/ubuntu/playground2004)). Once the sandbox/playground is ready, execute the instructions specified in the sections below.
 
     ## Setup SSH key
 
-    **This step is option and can be omitted.**
+    **This step is an option and can be omitted.**
 
     Create ssh key and add it to GitHub's [SSH keys](https://github.com/settings/keys) settings.
 
@@ -568,7 +568,7 @@ Let's create our first GitHub repository. This repository will hold `Hello world
     git clone https://github.com/ldynia/flask-sherlock.git
     cd flask-sherlock
 
-    # Building and running docker container
+    # Building and running the docker container
     docker build --tag flask-sherlock --build-arg FLASK_DEBUG=True .
     docker run --detach --name sherlock --publish 80:8080 --rm flask-sherlock
     docker ps
@@ -610,7 +610,7 @@ Let's create our first GitHub repository. This repository will hold `Hello world
    - Select `Codespaces` tab
    - Click `Create codespace on main` button
 
-1. Follow `REDME.md` instructions in `Installation`, `Testing` and `API` sections.
+1. Follow `REDME.md` instructions in the `Installation`, `Testing`, and `API` sections.
 
 ## 3. GitHub Issues
 
@@ -619,21 +619,21 @@ Let's create our first GitHub repository. This repository will hold `Hello world
 
   #### What are GitHub Issues?
 
-  GitHub Issues is a tool for keeping track of tasks, bugs and feedback for your project.
+  GitHub Issues is a tool for keeping track of tasks, bugs, and feedback on your project.
 
-  #### Why to use GitHub Issues?
+  #### Why use GitHub Issues?
 
   It's just a convenient way to manage all affairs related to your project.
 
 </details>
 
-1. In repository tabs click [Issues](https://github.com/ldynia/flask-sherlock/issues). Next, click the [New issue](https://github.com/ldynia/flask-sherlock2/issues/new) button. Fill the form with text specified on the image below, then click the `Submit new issue` button.
+1. In repository tabs, click [Issues](https://github.com/ldynia/flask-sherlock/issues). Next, click the [New issue](https://github.com/ldynia/flask-sherlock2/issues/new) button. Fill out the form with the text specified in the image below, then click the `Submit new issue` button.
 
     [![Issues](assets/img/git/tabs_issues.png)](https://github.com/ldynia/flask-sherlock/issues)
     [![Issues](assets/img/git/issues_new_issue.png)](https://github.com/ldynia/flask-sherlock/issues/new)
     [![Issues](assets/img/git/issue.png)](https://github.com/ldynia/flask-sherlock/issues/new)
 
-1. Fix invalid date and close the issue
+1. Fix the invalid date and close the issue
 
 ## 4. GitHub Releases / Tags
 
@@ -644,11 +644,11 @@ Let's create our first GitHub repository. This repository will hold `Hello world
 
 </details>
 
-1. In your repository click [tags](https://github.com/ldynia/flask-sherlock/tags) icon.
+1. In your repository, click the [tags](https://github.com/ldynia/flask-sherlock/tags) icon.
 
     [![Tags](assets/img/git/file_navigation_tags.png)](https://github.com/ldynia/flask-sherlock/tags)
 
-1. Click the `Releases` tab, next click `Create a new release` button, fill it with information specified on the picture below. Once done click the `Publish release` button.
+1. Click the `Releases` tab, then click the `Create a new release` button, and fill it out with the information specified in the picture below. Once done, click the `Publish release` button.
 
     ![New Release](assets/img/git/release.png)
 
@@ -657,19 +657,19 @@ Let's create our first GitHub repository. This repository will hold `Hello world
 <details>
   <summary>Context</summary>
 
-  #### What is GitHub Actions?
+  #### What are GitHub Actions?
 
-  GitHub Actions is a tool that allows you to automate tasks within your software development life cycle. GitHub Actions are event-driven, which means that commands that you want to execute run after occurrence of a specified event.
+  GitHub Actions is a tool that allows you to automate tasks within your software development life cycle. GitHub Actions are event-driven, which means that commands that you want to execute run after the occurrence of a specified event.
 
-  #### Why to use GitHub Actions?
+  #### Why use GitHub Actions?
 
-  GitHub Actions allows you to adopt backbone of DevOps methodology such CI/CD.
+  GitHub Actions allows you to adopt the backbone of DevOps methodology, such as CI/CD.
 
-  #### Explenation
+  #### Explanation
 
-  - **Continuous Integration** goal is to enable automated way to build, package, and test applications.
-  - **Continuous Delivery** goal is to automate the delivery of applications to given environment (test or production) via manual release.
-  - **Continuous Deployment** goal is to automated release of code to a production environment.
+  - **Continuous Integration** goal is to enable an automated way to build, package, and test applications.
+  - **Continuous Delivery** goal is to automate the delivery of applications to a given environment (test or production) via manual release.
+  - **Continuous Deployment** The goal is to automate code release in a production environment.
 
   #### Books
 
@@ -677,7 +677,7 @@ Let's create our first GitHub repository. This repository will hold `Hello world
 
 </details>
 
-1. In the repository click the [Actions](https://github.com/ldynia/flask-sherlock/actions) tab. Then click [set up a workflow yourself](https://github.com/ldynia/flask-sherlock2/new/main?filename=.github%2Fworkflows%2Fmain.yml&workflow_template=blank) link and create below workflows. **Remember to change username !!!**
+1. In the repository, click the [Actions](https://github.com/ldynia/flask-sherlock/actions) tab. Then click [set up a workflow yourself](https://github.com/ldynia/flask-sherlock2/new/main?filename=.github%2Fworkflows%2Fmain.yml&workflow_template=blank) link and create below workflows. **Remember to change username !!!**
 
     [![Actions](assets/img/git/tabs_actions.png)](https://github.com/ldynia/flask-sherlock/actions)
     ![Actions Get Started](assets/img/git/actions_get_started.png)
@@ -694,11 +694,11 @@ Let's create our first GitHub repository. This repository will hold `Hello world
           CODE_COVERAGE_THRESHOLD: 90
         strategy:
           matrix:
-            python-version: ["3.10", "3.11"]
+            python-version: ["3.11", "3.12"]
         steps:
-         - uses: actions/checkout@v3
+         - uses: actions/checkout@v4
          - name: Set up Python ${{ matrix.python-version }}
-           uses: actions/setup-python@v4
+           uses: actions/setup-python@v5
            with:
             python-version: ${{ matrix.python-version }}
          - name: Install python dependencies
@@ -727,7 +727,7 @@ Let's create our first GitHub repository. This repository will hold `Hello world
             IMAGE_ARTIFACT: ${{ secrets.DOCKER_HUB_USERNAME }}/sherlock:latest
         environment: production
         steps:
-         - uses: actions/checkout@v3
+         - uses: actions/checkout@v4
          - name: Login to DockerHub
            run: docker login -u ${{ secrets.DOCKER_HUB_USERNAME }} -p ${{ secrets.DOCKER_HUB_PASSWORD }}
          - name: Build docker image
@@ -738,13 +738,13 @@ Let's create our first GitHub repository. This repository will hold `Hello world
            run: docker push $IMAGE_ARTIFACT
     ```
 
-1. What's missing are `DOCKER_HUB_USERNAME` and `DOCKER_HUB_PASSWORD` environment variables which are our secrets. Go to repository [Settings](https://github.com/ldynia/flask-sherlock/settings), click [Environments](https://github.com/ldynia/flask-sherlock/settings/environments) blade, then click [New Environment](https://github.com/ldynia/flask-sherlock/settings/environments/new) button, name it **production**. Next, click the `Configure environment` button. Finally, click the `Add Secret` button and add [DockerHub](https://hub.docker.com/settings/security) secrets.
+1. What's missing are the `DOCKER_HUB_USERNAME` and `DOCKER_HUB_PASSWORD` environment variables which are our secrets. Go to repository [Settings](https://github.com/ldynia/flask-sherlock/settings), click [Environments](https://github.com/ldynia/flask-sherlock/settings/environments) blade, then click [New Environment](https://github.com/ldynia/flask-sherlock/settings/environments/new) button, name it **production**. Next, click the `Configure environment` button. Finally, click the `Add Secret` button and add [DockerHub](https://hub.docker.com/settings/security) secrets.
 
     ![Settings](assets/img/git/tabs_settings.png)
     ![Settings](assets/img/git/environment_secrets.png)
 
 
-1. Now in [Actions](https://github.com/ldynia/flask-sherlock/actions) you will see below workflows. Select `Continuous Integration` blade, then click the `Run Workflow` button, and run workflow against the **main** branch.
+1. Now in [Actions](https://github.com/ldynia/flask-sherlock/actions) you will see below workflows. Select the `Continuous Integration` blade, click the `Run Workflow` button, and run workflow against the **main** branch.
 
     ![Workflows](assets/img/git/actions_workfows_2.png)
     ![Run Workflow](assets/img/git/actions_run_workflow.png)
@@ -758,7 +758,7 @@ Let's create our first GitHub repository. This repository will hold `Hello world
 
   #### What is a Pull Request?
 
-  A pull request (PR) is a feature of a git hosting service that allows to create a contribution to the repository. PRs allow the maintainer of a repository to review, ask for comments, edit or even discard submitted work. I like to think of a PR as a tangible unit of work in a collaborative world of code.
+  A pull request (PR) is a feature of a git hosting service that allows to create a contribution to the repository. PRs allow the maintainer of a repository to review, ask for comments, edit, or even discard submitted work. I like to think of a PR as a tangible unit of work in a collaborative world of code.
 
 </details>
 
@@ -811,17 +811,17 @@ Let's create our first GitHub repository. This repository will hold `Hello world
 <details>
   <summary>Context</summary>
 
-  #### What is GitHub Pages?
+  #### What are GitHub Pages?
 
-  GitHub Pages is a hosting service for static sites. GitHub Pages serves any static files (HTML, CSS, JavaScript) that you push to repository. You can create your own static files or use a static site generator such [Jekyll](https://jekyllrb.com/docs/) to build your site for you.
+  GitHub Pages is a hosting service for static sites. GitHub Pages serve any static files (HTML, CSS, JavaScript) you push to the repository. You can create your static files or use a static site generator such [Jekyll](https://jekyllrb.com/docs/) to build your site.
 
   #### Why to use GitHub Pages?
 
-  The short answer is for **branding** and **promotion**. You can use it for blogging, or as a journal of your work. You can promote yourself with `my_username.github.io` or your project `my_username.github.io/my_project`. Moreover, you have option to brand your work with a custom domain.
+  The short answer is for **branding** and **promotion**. You can use it for blogging or as a journal of your work. You can promote yourself with `my_username.github.io` or your project `my_username.github.io/my_project`. Moreover, you have the option to brand your work with a custom domain.
 
 </details>
 
-1. In repository settings [Settings](https://github.com/ldynia/flask-sherlock/settings) locate [Pages](https://github.com/ldynia/flask-sherlock/settings/pages) tab. Set `Source` to the **main** branch and `directory` to **/docs** and click the`Save` button.
+1. In repository settings [Settings](https://github.com/ldynia/flask-sherlock/settings) locate [Pages](https://github.com/ldynia/flask-sherlock/settings/pages) tab. Set `Source` to the **main** branch and `directory` to **/docs** and click the ' Save` button.
 
     [![GitHub Pages](assets/img/git/tabs_settings.png)](https://github.com/ldynia/flask-sherlock/settings)
     [![Github Pages](assets/img/git/settings_pages.png)](https://github.com/ldynia/flask-sherlock/settings/pages)
@@ -833,7 +833,7 @@ Let's create our first GitHub repository. This repository will hold `Hello world
    theme: minima
    ```
 
-1. Click `Choose a theme` button and select `Cayman` theme (I like it the most) then click `Select theme` button. Finally, copy and paste below content into the interface that you see, or into `docs/index.md`
+1. Click the `Choose a theme` button and select the `Cayman` theme (I like it the most), then click the `Select theme` button. Finally, copy and paste the below content into the interface that you see or into `docs/index.md`
 
     ~~~
     ## Sherlock
@@ -861,7 +861,7 @@ Let's create our first GitHub repository. This repository will hold `Hello world
     ```markdown
     Syntax highlighted code block
 
-    > Quotes "Life is like box o chocolates"
+    > Quotes "Life is like box of chocolates"
 
     # Header 1
     ## Header 2
@@ -879,29 +879,29 @@ Let's create our first GitHub repository. This repository will hold `Hello world
     ```
     ~~~
 
-1. Once ready you will be able to promote you project at this url [https://ldynia.github.io/flask-sherlock/](https://ldynia.github.io/flask-sherlock/) **Remember to change username !!!**
+1. Once ready, you will be able to promote your project at this URL [https://ldynia.github.io/flask-sherlock/](https://ldynia.github.io/flask-sherlock/) **Remember to change username !!!**
 
 ## 9. GitHub Wikis
 
 <details>
   <summary>Context</summary>
 
-  Wiki is an important part of an open source project. `READEME.md` is intended to be used as a brief documentation on how to get started with a project. `Wiki` on the other hand are intended to provide information about the project that can't be expressed by code.
+  Wiki is an important part of an open-source project. `READEME.md` is intended to be used as a brief documentation on how to get started with a project. `Wiki`, on the other hand, are intended to provide information about the project that can't be expressed by code.
 
 </details>
 
-1. On the main page of your repository click [Wiki](https://github.com/ldynia/flask-sherlock/wiki) tab.
+1. On the main page of your repository, click [Wiki](https://github.com/ldynia/flask-sherlock/wiki) tab.
 
     [![Wiki](assets/img/git/tabs_wiki.png)](https://github.com/ldynia/flask-sherlock/wiki)
 
-1. Next we will create below pages by clicking the [`Create Page`](https://github.com/ldynia/flask-sherlock/wiki/_new) button.
+1. Next, we will create below pages by clicking the [`Create Page`](https://github.com/ldynia/flask-sherlock/wiki/_new) button.
 
     **Home**
 
     ~~~
     # Welcome to the flask-sherlock wiki!
 
-    Wiki is an important part of an open source project. `READEME.md` is intended to be used as a brief documentation on how to get started with a project. `Wiki` on the other hand are intended to provide documentation of the project that can't be expressed by code.
+    Wiki is an important part of an open-source project. `READEME.md` is intended to be used as a brief documentation on how to get started with a project. `Wiki`, on the other hand, is intended to provide documentation of the project that can't be expressed by code.
     ~~~
 
     **Agile Manifesto**
