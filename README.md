@@ -141,7 +141,7 @@ Let's create our first GitHub repository. This repository will hold `Hello world
     **Dockerfile**
 
     ```Dockerfile
-    FROM python:3.9.5-alpine
+    FROM python:3.12-alpine
 
     # Build arguments
     ARG FLASK_DEBUG=False \
@@ -174,14 +174,14 @@ Let's create our first GitHub repository. This repository will hold `Hello world
     USER $USER:$GROUP
 
     # Start app
-    CMD flask run --host=$HOST --port=$PORT
+    CMD ["flask", "run", "--host=$HOST", "--port=$PORT"]
     ```
     
     **.devcontainer/devcontainer.json**
     ```json
     {
-      "name": "Python 3.11",
-      "image": "mcr.microsoft.com/devcontainers/python:3.11",
+      "name": "Python 3.12",
+      "image": "mcr.microsoft.com/devcontainers/python:3.12",
       "hostRequirements": {
         "cpus": 2,
         "memory": "4gb",
